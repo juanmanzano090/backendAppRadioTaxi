@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.use("/backen-doscampos", router)
+app.use(process.env.PREFIJO, router)
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
