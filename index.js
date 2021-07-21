@@ -18,9 +18,13 @@ db.once('open', function() {
   console.log("CONECTADO A DB")
 });
 
-const registroForm = require('./funcionalidad/rutas/registroForm');
+const usuario = require('./funcionalidad/rutas/usuario');
+const egreso = require('./funcionalidad/rutas/egreso');
 
-router.use('/registroForm', registroForm);
+router.use('/usuario', usuario);
+router.use('/egreso', egreso);
+
+
 
 router.get('/', (req, res) => {
   res.send('Hello World!')

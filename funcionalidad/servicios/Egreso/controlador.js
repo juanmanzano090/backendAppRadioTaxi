@@ -1,11 +1,11 @@
 const logicaDB = require('./logicaDB');
 
-const crearRegistroForm = async (req,res) => {
-    let registroForm = req.body;
+const crearEgreso = async (req,res) => {
+    let egreso = req.body;
      try {
-         let respuesta = await logicaDB.crearRegistroFormDB(registroForm);
+         let respuesta = await logicaDB.crearEgresoDB(egreso);
          res.status(200).json({
-            'registro': respuesta
+            'egreso': respuesta
          });
          return;
      } catch (error) {
@@ -16,11 +16,11 @@ const crearRegistroForm = async (req,res) => {
      }
 }
 
-const obtenerRegistroForm = async (req,res) =>{
+const obtenerEgreso = async (req,res) =>{
     try {
-        let respuesta = await logicaDB.obtenerRegistroFormDB();
+        let respuesta = await logicaDB.obtenerEgresoDB();
         res.status(200).json({
-            'registro': respuesta
+            'egresos': respuesta
         });
         return;
     } catch (error) {
@@ -31,13 +31,13 @@ const obtenerRegistroForm = async (req,res) =>{
     }
 }
 
-const obtenerRegistroFormId = async (req,res) =>{
-    let id = req.params.id;
+const obtenerEgresoId = async (req,res) =>{
+    let id = req.params.id
 
     try {
-        let respuesta = await logicaDB.obtenerRegistroFormIdDB(id);
+        let respuesta = await logicaDB.obtenerEgresoIdDB(id);
         res.status(200).json({
-            'registro': respuesta
+            'egresos_usuario': respuesta
         });
         return;
     } catch (error) {
@@ -49,7 +49,7 @@ const obtenerRegistroFormId = async (req,res) =>{
 }
 
 module.exports = {
-    crearRegistroForm,
-    obtenerRegistroForm,
-    obtenerRegistroFormId,
+    crearEgreso,
+    obtenerEgreso,
+    obtenerEgresoId,
 }
