@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const Egreso = new Schema({
-    descripcion:String,
-    precio: Number,
+const Viaje = new Schema({
+    nombre:String,
+    direccion: String,
+    destino: String,
     id_usuario: {
         type: Schema.ObjectId,
         ref: 'Usuario',
@@ -11,4 +12,4 @@ const Egreso = new Schema({
     }
 });
 
-module.exports = mongoose.model('Egreso',Egreso)
+module.exports = mongoose.model('Viaje',Viaje)

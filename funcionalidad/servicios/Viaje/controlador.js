@@ -1,11 +1,11 @@
 const logicaDB = require('./logicaDB');
 
-const crearEgreso = async (req,res) => {
-    let egreso = req.body;
+const crearViaje = async (req,res) => {
+    let viaje = req.body;
      try {
-         let respuesta = await logicaDB.crearEgresoDB(egreso);
+         let respuesta = await logicaDB.crearViajeDB(viaje);
          res.status(200).json({
-            'egreso': respuesta
+            'viaje': respuesta
          });
          return;
      } catch (error) {
@@ -16,11 +16,11 @@ const crearEgreso = async (req,res) => {
      }
 }
 
-const obtenerEgreso = async (req,res) =>{
+const obtenerViaje = async (req,res) =>{
     try {
-        let respuesta = await logicaDB.obtenerEgresoDB();
+        let respuesta = await logicaDB.obtenerViajeDB();
         res.status(200).json({
-            'egresos': respuesta
+            'viajes': respuesta
         });
         return;
     } catch (error) {
@@ -31,13 +31,13 @@ const obtenerEgreso = async (req,res) =>{
     }
 }
 
-const obtenerEgresoId = async (req,res) =>{
+const obtenerViajeId = async (req,res) =>{
     let id = req.params.id
 
     try {
-        let respuesta = await logicaDB.obtenerEgresoIdDB(id);
+        let respuesta = await logicaDB.obtenerViajeIdDB(id);
         res.status(200).json({
-            'egresos_usuario': respuesta
+            'viajes_usuario': respuesta
         });
         return;
     } catch (error) {
@@ -49,7 +49,7 @@ const obtenerEgresoId = async (req,res) =>{
 }
 
 module.exports = {
-    crearEgreso,
-    obtenerEgreso,
-    obtenerEgresoId,
+    crearViaje,
+    obtenerViaje,
+    obtenerViajeId,
 }

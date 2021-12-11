@@ -19,10 +19,10 @@ db.once('open', function() {
 });
 
 const usuario = require('./funcionalidad/rutas/usuario');
-const egreso = require('./funcionalidad/rutas/egreso');
+const viaje = require('./funcionalidad/rutas/viaje');
 
 router.use('/usuario', usuario);
-router.use('/egreso', egreso);
+router.use('/viaje', viaje);
 
 
 
