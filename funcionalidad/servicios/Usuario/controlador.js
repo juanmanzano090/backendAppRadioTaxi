@@ -48,8 +48,29 @@ const obtenerUsuarioId = async (req,res) =>{
     }
 }
 
+const obtenerLoginId = async (req,res) =>{
+
+    let nombre = req.params.nombre;
+
+
+
+    try {
+        let respuesta = await logicaDB.obtenerLoginIdDB({nombre});
+        res.status(200).json({
+            'usuarios': respuesta
+        });
+        return;
+    } catch (error) {
+        res.status(500).json({
+            error
+        });
+        return;
+    }
+}
+
 module.exports = {
     crearUsuario,
     obtenerUsuario,
     obtenerUsuarioId,
+    obtenerLoginId,
 }
