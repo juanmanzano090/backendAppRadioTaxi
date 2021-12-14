@@ -15,8 +15,8 @@ const obtenerUsuarioIdDB = async (id) => {
     return respuesta;
 }
 
-const obtenerLoginIdDB = async (nombre) => {
-    let respuesta = await Usuario.find(nombre);
+const obtenerLoginIdDB = async (correo) => {
+    let respuesta = await Usuario.findOne(correo);
     return respuesta;
 }
 

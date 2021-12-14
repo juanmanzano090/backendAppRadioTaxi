@@ -8,7 +8,7 @@ router.get('/obtener-usuarios', controlador.obtenerUsuario);
 
 router.get('/obtener-registro/:id', controlador.obtenerUsuarioId);
 
-router.get('/obtener-login/:nombre', controlador.obtenerLoginId);
+router.get('/obtener-login/:correo', controlador.obtenerLoginId);
 
 
 module.exports = router;

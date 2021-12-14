@@ -3,6 +3,7 @@ const logicaDB = require('./logicaDB');
 const crearUsuario = async (req,res) => {
     let usuario = req.body;
      try {
+         
          let respuesta = await logicaDB.crearUsuarioDB(usuario);
          res.status(200).json({
             'usuario': respuesta
@@ -50,12 +51,12 @@ const obtenerUsuarioId = async (req,res) =>{
 
 const obtenerLoginId = async (req,res) =>{
 
-    let nombre = req.params.nombre;
+    let correo = req.params.correo;
 
 
 
     try {
-        let respuesta = await logicaDB.obtenerLoginIdDB({nombre});
+        let respuesta = await logicaDB.obtenerLoginIdDB({correo});
         res.status(200).json({
             'usuarios': respuesta
         });
